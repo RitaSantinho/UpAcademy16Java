@@ -1,7 +1,6 @@
 package pt.upacademy.FSM;
 
 import io.altar.jseproject.pratica2.repositories.ProductRepository;
-import io.altar.jseproject.pratica2.repositories.ShelfRepository;
 import pt.upacademy.ScannerUtils.ScannerUtils;
 
 //1. Create a "wrapper" class that models the state machine
