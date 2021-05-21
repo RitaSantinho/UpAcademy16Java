@@ -1,0 +1,6 @@
+1 	- Copy project package to "src/main/java"
+2 	- On pom.xml file change route to main class
+2.1 -	(Run Maven / Update Project whenever the pom.xml is changed )
+3 	- Run Project as "Maven Build" or "Maven install"
+4 	- On target folder open jseprojectMaven.jar on terminal
+5 	- On terminal run "java -jar jseprojectMaven.jar"
