@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "http://127.0.0.1:8080/jeeexample/api/message",
+			"name": "Create Message",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -33,6 +33,129 @@
 						"jeeexample",
 						"api",
 						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Time",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Teste message\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/jeeexample/api/message/time",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"jeeexample",
+						"api",
+						"message",
+						"time"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Full Name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Joao\",\n    \"lastName\": \"Cortes\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/jeeexample/api/user/fullName",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"jeeexample",
+						"api",
+						"user",
+						"fullName"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "exist Message",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/jeeexample/api/message/exist/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"jeeexample",
+						"api",
+						"message",
+						"exist",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users by Message Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/jeeexample/api/user/message/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"jeeexample",
+						"api",
+						"user",
+						"message",
+						"1"
 					]
 				}
 			},
