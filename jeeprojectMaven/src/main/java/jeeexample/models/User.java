@@ -12,6 +12,8 @@ import javax.persistence.NamedQuery;
 	@NamedQuery(name = User.GET_USERS_COUNT, query = "SELECT COUNT(p.id) FROM User p"),
 	@NamedQuery(name = User.GET_USERS_BY_MESSAGE_ID, query="SELECT s FROM User s WHERE s.message.id = :messageId"),
 	@NamedQuery(name = User.GET_EMPTY_USERS, query="SELECT s FROM User s WHERE s.message = null"),
+	@NamedQuery(name = User.USERS_MESSAGE_TO_NULL, query="UPDATE User s SET s.message = null WHERE s.message.id = :messageId"),
+	@NamedQuery(name = User.DELETE_USERS_WITH_MESSAGE_ID, query="delete from User e where e.message.id = :id")
 })
 public class User extends Entity_ {
 
@@ -20,6 +22,8 @@ public class User extends Entity_ {
 	public static final String GET_USERS_COUNT = "getUsersCount";
 	public static final String GET_USERS_BY_MESSAGE_ID = "getUsersByProductId";
 	public static final String GET_EMPTY_USERS = "getEmptyUsers";
+	public static final String USERS_MESSAGE_TO_NULL = "setUsersMessageToNull";
+	public static final String DELETE_USERS_WITH_MESSAGE_ID = "deleteUsersByMessageId";
 	
 	private static final long serialVersionUID = 1L;
 	@ManyToOne
