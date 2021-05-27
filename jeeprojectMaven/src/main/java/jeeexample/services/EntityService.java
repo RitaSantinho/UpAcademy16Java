@@ -1,5 +1,6 @@
 package jeeexample.services;
 
+import java.time.LocalTime;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -26,6 +27,14 @@ public abstract class EntityService<T extends EntityRepository<R>, R extends Ent
 
 	@Context
 	protected UriInfo context;
+	
+	@GET
+	@Path("time")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getTime() {
+		LocalTime time = LocalTime.now();
+		return "Time : " + time.toString();
+	}
 
 	@GET
 	@Path("status")
