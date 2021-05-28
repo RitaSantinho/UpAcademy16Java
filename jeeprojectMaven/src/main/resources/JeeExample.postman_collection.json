@@ -39,6 +39,106 @@
 			"response": []
 		},
 		{
+			"name": "Create User with Message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Joao\",\n    \"lastName\": \"Cortes\",\n    \"name\": \"Joao Silva Cortes\",\n    \"message\": {\n        \"id\": 1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/jeeexample/api/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"jeeexample",
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Joao\",\n    \"lastName\": \"Cortes\",\n    \"name\": \"Joao Silva Cortes\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/jeeexample/api/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"jeeexample",
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User With FullName Method",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Joao\",\n    \"lastName\": \"Cortes\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/jeeexample/api/user/fullName",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"jeeexample",
+						"api",
+						"user",
+						"fullName"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Time",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -76,40 +176,6 @@
 			"response": []
 		},
 		{
-			"name": "Full Name",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"Joao\",\n    \"lastName\": \"Cortes\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://127.0.0.1:8080/jeeexample/api/user/fullName",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8080",
-					"path": [
-						"jeeexample",
-						"api",
-						"user",
-						"fullName"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "exist Message",
 			"request": {
 				"method": "GET",
@@ -139,6 +205,133 @@
 			"name": "Get Users by Message Id",
 			"request": {
 				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/jeeexample/api/user/message/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"jeeexample",
+						"api",
+						"user",
+						"message",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users Without message",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/jeeexample/api/user/message/0",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"jeeexample",
+						"api",
+						"user",
+						"message",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/jeeexample/api/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"jeeexample",
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/jeeexample/api/message",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"jeeexample",
+						"api",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove message from users by message id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/jeeexample/api/user/message/1/remove",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"jeeexample",
+						"api",
+						"user",
+						"message",
+						"1",
+						"remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete users by message id",
+			"request": {
+				"method": "DELETE",
 				"header": [],
 				"url": {
 					"raw": "http://127.0.0.1:8080/jeeexample/api/user/message/1",
