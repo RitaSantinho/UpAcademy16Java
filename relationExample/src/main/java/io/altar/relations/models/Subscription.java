@@ -18,6 +18,7 @@ public class Subscription extends Entity_ {
 	@ManyToOne
 	@JsonIgnoreProperties("subscriptions")
 	private Product product;
+	
 	@ManyToOne
 	@JsonIgnoreProperties("subscriptions")
 	private Campaign campaign;

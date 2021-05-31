@@ -5,6 +5,7 @@ import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -32,13 +33,27 @@ public class UserService extends EntityService<UserRepository, User> {
 	}
 
 	@GET
-	@Path("/message/{id}")
+	@Path("/message/{messageId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<User> getShelvesByProductID(@PathParam("id") long id) {
-		if (id == 0) {
+	public List<User> getShelvesByProductID(@PathParam("messageId") long messageId) {
+		if (messageId == 0) {
 			return repository.getEmptyUsers();
 		} else {
-			return repository.findByMessageId(id);
+			return repository.findByMessageId(messageId);
 		}
+	}
+
+	@GET
+	@Path("/message/{messageId}/remove")
+	@Produces(MediaType.APPLICATION_JSON)
+	public long setUsersMessageToNullByMessageId(@PathParam("messageId") long messageId) {
+		return repository.setUsersMessageToNullByMessageId(messageId);
+	}
+	
+	@DELETE
+	@Path("/message/{messageId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public long deleteUsersByMessageId(@PathParam("messageId") long messageId) {
+		return repository.deleteUsersByMessageId(messageId);
 	}
 }

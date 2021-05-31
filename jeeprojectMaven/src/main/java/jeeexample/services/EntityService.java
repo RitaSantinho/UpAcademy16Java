@@ -65,9 +65,9 @@ public abstract class EntityService<T extends EntityRepository<R>, R extends Ent
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response save(R entity) {
-		repository.addEntity(entity);
-		return Response.ok().build();
+	@Produces(MediaType.APPLICATION_JSON)
+	public R save(R entity) {
+		return repository.addEntity(entity);
 	}
 
 	@GET

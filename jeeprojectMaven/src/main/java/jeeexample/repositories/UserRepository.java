@@ -34,9 +34,17 @@ public class UserRepository extends EntityRepository<User> {
 		return entityManager.createNamedQuery(User.GET_EMPTY_USERS, getEntityClass()).getResultList();
 	}
 
-	public List<User> findByMessageId(long id) {
+	public List<User> findByMessageId(long messageId) {
 		TypedQuery<User> query = entityManager.createNamedQuery(User.GET_USERS_BY_MESSAGE_ID, getEntityClass());
-		query.setParameter("messageId", id);
+		query.setParameter("messageId", messageId);
 		return query.getResultList();
+	}
+	
+	public long setUsersMessageToNullByMessageId(long messageId) {
+	    return entityManager.createNamedQuery(User.USERS_MESSAGE_TO_NULL).setParameter("messageId", messageId).executeUpdate();
+	}
+	
+	public long deleteUsersByMessageId(long messageId) {
+	    return entityManager.createNamedQuery(User.DELETE_USERS_WITH_MESSAGE_ID).setParameter("messageId", messageId).executeUpdate();
 	}
 }

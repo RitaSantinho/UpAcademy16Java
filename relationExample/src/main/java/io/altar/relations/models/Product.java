@@ -27,12 +27,16 @@ public class Product extends Entity_ {
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnoreProperties("product")
 	private List<Shelf> shelves;
+	
 	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER)
 	@JoinTable(name = "product_tag", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "tag_id"))
 	private Set<Tag> tags = new HashSet<>();
+	
 	@OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
 	@JsonIgnoreProperties("product")
 	private Set<Subscription> subscriptions;
+	
+	
 	private int discount;
 	private int iva;
 	private float pvp;
