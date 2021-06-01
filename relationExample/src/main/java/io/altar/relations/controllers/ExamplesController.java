@@ -148,6 +148,13 @@ public class ExamplesController {
 	}
 	
 	@GET
+	@Path("allShelves")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Shelf> getAllShelves() {
+		return SS.getAll().stream().collect(Collectors.toList());
+	}
+	
+	@GET
 	@Path("allSubscriptions")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Subscription> getAllSubscriptions() {
