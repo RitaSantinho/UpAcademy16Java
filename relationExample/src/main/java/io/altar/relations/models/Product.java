@@ -48,13 +48,20 @@ public class Product extends Entity_ {
 	public void setShelves(List<Shelf> shelves) {
 		this.shelves = shelves;
 	}
-
+	
+	
+	
 	public int getDiscount() {
 		return discount;
 	}
 
 	public void setDiscount(int discount) {
 		this.discount = discount;
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	public int getIva() {
